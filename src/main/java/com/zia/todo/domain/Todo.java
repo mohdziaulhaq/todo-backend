@@ -1,6 +1,6 @@
 package com.zia.todo.domain;
 
-import java.util.UUID;
+import java.time.LocalDate;
 
 public class Todo {
 
@@ -8,6 +8,35 @@ public class Todo {
     private String title;
     private String content;
     private String status;
+
+    private LocalDate createdDate;
+
+    private LocalDate completionDate;
+
+    public Todo(int id, String title, String content, String status, LocalDate createdDate, LocalDate completionDate) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+        this.status = status;
+        this.createdDate = createdDate;
+        this.completionDate = completionDate;
+    }
+
+    public LocalDate getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(LocalDate createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public LocalDate getCompletionDate() {
+        return completionDate;
+    }
+
+    public void setCompletionDate(LocalDate completionDate) {
+        this.completionDate = completionDate;
+    }
 
     public int getId() {
         return id;
@@ -48,6 +77,8 @@ public class Todo {
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 ", status='" + status + '\'' +
+                ", createdDate=" + createdDate +
+                ", completionDate=" + completionDate +
                 '}';
     }
 }
